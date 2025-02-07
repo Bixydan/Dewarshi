@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta name="description" content="Dewarshi Organic - Fresh and organic products from our farm.">
+<meta property="og:title" content="Dewarshi Organic">
+<meta property="og:description" content="Fresh and organic products from our farm.">
+<meta property="og:image" content="logo.png">
+<link rel="shortcut icon" type="image/x-icon" href="logo.png"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dewarshi Farm - Organic Farming in Nepal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+    }
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
+    .hero-section {
+      background: url('background coffee.jpeg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+    .hero-section p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .btn-primary {
+      background: #28a745;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+    }
+    .section {
+      padding: 80px 0;
+    }
+    .section h2 {
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #4A4A4A;
+    }
+    .card {
+      border: none;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+    .footer {
+      background: #2C3E50;
+      color: white;
+      padding: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Dewarshi Organic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#farmstay">Farmstay</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div>
+      <h1>Welcome to Dewarshi Farm</h1>
+      <p>Experience the beauty of organic farming in the heart of Nepal with a sip of Organic coffee.</p>
+      <a href="#about" class="btn btn-primary">Explore Our Farm</a>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="section bg-light">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Welcome to Dewarshi Farm, a heaven of organic farming nestled in the lush landscapes of Nepal. We specialize in growing coffee, oranges, and a variety of fruits, while also practicing sustainable animal husbandry. Our farmstay offers a unique opportunity to connect with nature and experience the joys of rural life.</p>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="row">
+        <!-- Coffee -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="coffee.jpg" class="card-img-top" alt="Organic Coffee">
+            <div class="card-body">
+              <h5 class="card-title">Organic Coffee</h5>
+              <p class="card-text">Grown in the lush hills of Nepal, our coffee is rich, aromatic, and sustainably produced.</p>
+              <a href="coffee.html" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Oranges -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="citrus.jpg" class="card-img-top" alt="Fresh Oranges">
+            <div class="card-body">
+              <h5 class="card-title">Fresh Oranges</h5>
+              <p class="card-text">Sweet and juicy oranges, handpicked from our organic orchards.</p>
+              <a href="citrus.html" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Fruits -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="fruits.jpg" class="card-img-top" alt="Seasonal Fruits">
+            <div class="card-body">
+              <h5 class="card-title">Seasonal Fruits</h5>
+              <p class="card-text">A variety of fresh fruits grown in harmony with nature.</p>
+              <a href="fruits.html" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Seeds -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="nursery.jpg" class="card-img-top" alt="Seed Nursery">
+            <div class="card-body">
+              <h5 class="card-title">Coffee Nursery</h5>
+              <p class="card-text">High-quality coffee plants with almost all the varieties available in Nepal.</p>
+              <a href="coffee.html" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Animal Products -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="animal.jpg" class="card-img-top" alt="Animal Products">
+            <div class="card-body">
+              <h5 class="card-title">Animal Products</h5>
+              <p class="card-text">Fresh dairy, eggs, and other products from our happy animals.</p>
+              <a href="animals.html" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Farmstay -->
+  <section id="farmstay" class="section bg-light">
+    <div class="container">
+      <h2>Farmstay</h2>
+      <p>Stay with us and experience life on an organic farm. Enjoy fresh meals, farm tours, and peaceful nights under the stars.</p>
+      <a href="#contact" class="btn btn-primary">Book Now</a>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2>Gallery</h2>
+      <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #333;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    /* Pop-up Effect on Hover */
+    .gallery-item:hover {
+      transform: scale(1.3);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 5);
+      z-index: 10; /* Bring the hovered item to the front */
+    }
+    .gallery-item:hover img {
+      transform: scale(1); /* Enlarge the image */
+    }
+
+    /* Overlay to make the pop-up effect more prominent */
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none; /* Ensure the overlay doesn't block hover */
+    }
+    .gallery-item:hover::after {
+      opacity: 0.2; /* Show overlay on hover */
+    }
+
+    @media (max-width: 768px) {
+      .gallery-item {
+        width: 50%;
+        height: auto;
+      }
+    }
+  </style>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="img3.jpg" alt="Farm Photo 1">
+    </div>
+    <div class="gallery-item">
+      <img src="img4.jpg" alt="Farm Photo 2">
+    </div>
+    <div class="gallery-item">
+      <img src="img5.jpg" alt="Farm Photo 3">
+    </div>
+    <div class="gallery-item">
+      <img src="img6.jpg" alt="Farm Photo 4">
+    </div>
+    <div class="gallery-item">
+      <img src="img7.jpg" alt="Farm Photo 5">
+    </div>
+    <div class="gallery-item">
+      <img src="img8.jpg" alt="Farm Photo 5">
+    </div>
+  </div>
+    </div>
+  </section>
+
+  <!-- Contact Us -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to book a farmstay? Reach out to us!</p>
+    <div class="row">
+      <!-- Contact Form -->
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Your Email" required>
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Buttons and Map -->
+      <div class="col-md-6">
+        <!-- Contact Buttons -->
+        <div class="d-flex flex-column gap-3 mb-4">
+          <a href="tel:+9779822783298" class="btn btn-success">
+            <i class="fas fa-phone"></i> Call Us
+          </a>
+          <a href="https://wa.me/9779822783298" class="btn btn-success" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="viber://contact?number=%2B9779822783298" class="btn btn-success">
+            <i class="fab fa-viber"></i> Viber
+          </a>
+        </div>
+
+        <!-- Google Map -->
+        <div class="map-container">
+          <iframe src= "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d19411.399479107436!2d84.39247150912024!3d27.842059973619715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDUwJzAzLjAiTiA4NMKwMjInNDQuMCJF!5e1!3m2!1sen!2snp!4v1711006915188!5m2!1sen!2snp" allowfullscreen="" max-width=100% loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61555121012138"><i class="fab fa-facebook"></i></a>
+    <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/dewarshifarm/?fbclid=IwAR2Ai_4OLk_ChtS3fvYbDK4npUsUIgDQ73O5_9-bTL1tC8xEUzkgfg7bFqQ"><i class="fab fa-instagram"></i></a>
+  </div>
+  <p>&copy; 2023 Dewarshi Organic. All rights reserved.</p>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
