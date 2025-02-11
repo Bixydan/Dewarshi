@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-387JBRNSCW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-387JBRNSCW');
-</script>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 <meta name="description" content="Dewarshi Organic - Fresh and organic products from our farm.">
 <meta property="og:title" content="Dewarshi Organic">
@@ -230,7 +221,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
-    .gallery-item img {
+    .gallery-item img, .gallery-item video {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -243,7 +234,7 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 5);
       z-index: 10; /* Bring the hovered item to the front */
     }
-    .gallery-item:hover img {
+    .gallery-item:hover img, .gallery-item:hover video {
       transform: scale(1); /* Enlarge the image */
     }
 
@@ -263,6 +254,72 @@
     .gallery-item:hover::after {
       opacity: 0.2; /* Show overlay on hover */
     }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 1200px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .modal-video {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            display: none;
+        }
+
+        .modal-media {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.3s;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
     @media (max-width: 768px) {
       .gallery-item {
@@ -272,30 +329,94 @@
     }
   </style>
   <div class="gallery">
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="openModal(0)">
       <img src="img3.jpg" alt="Farm Photo 1">
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="openModal(1)">
       <img src="img4.jpg" alt="Farm Photo 2">
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="openModal(2)">
       <img src="img5.jpg" alt="Farm Photo 3">
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="openModal(3)">
       <img src="img6.jpg" alt="Farm Photo 4">
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="openModal(4)">
       <img src="img7.jpg" alt="Farm Photo 5">
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="openModal(5)">
       <img src="img8.jpg" alt="Farm Photo 5">
     </div>
-    <div class="gallery-item">
-      <video controls width="400" playsinline >
-        <source src="mountain cloud.mp4" type="video/mp4">
+    <div class="gallery-item" onclick="openModal(6)">
+      <video controls width="400" playsinline poster="" >
+        <source
+            src="
+           mountain cloud.mp4"
+            type="video/mp4">
+        Your browser does not support the video tag.
       </video>
     </div>
   </div>
+  <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img class="modal-media" id="modalImage" style="display: none;">
+            <video class="modal-media" id="modalVideo" controls style="display: none;"></video>
+        </div>
+        <a class="prev" onclick="changeSlide(-1)">❮</a>
+        <a class="next" onclick="changeSlide(1)">❯</a>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const mediaElements = document.querySelectorAll('.gallery-item img, .gallery-item video');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modalImage');
+        const modalVideo = document.getElementById('modalVideo');
+
+        function openModal(index) {
+            currentIndex = index;
+            const media = mediaElements[currentIndex];
+            
+            if (media.tagName === 'IMG') {
+                modalImg.src = media.src;
+                modalImg.style.display = 'block';
+                modalVideo.style.display = 'none';
+                modalVideo.pause();
+            } else if (media.tagName === 'VIDEO') {
+                modalVideo.innerHTML = media.innerHTML;
+                modalVideo.style.display = 'block';
+                modalImg.style.display = 'none';
+                modalVideo.play();
+            }
+            
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+            modalVideo.pause();
+        }
+
+        function changeSlide(n) {
+            // Hide current media before changing
+            modalImg.style.display = 'none';
+            modalVideo.style.display = 'none';
+            modalVideo.pause();
+
+            currentIndex += n;
+            if (currentIndex >= mediaElements.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = mediaElements.length - 1;
+            
+            openModal(currentIndex);
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
     </div>
   </section>
 
@@ -325,7 +446,7 @@
       <div class="col-md-6">
         <!-- Contact Buttons -->
         <div class="d-flex flex-column gap-3 mb-4">
-          <a href="tel:+9779845195467" class="btn btn-success">
+          <a href="tel:+9779822783298" class="btn btn-success">
             <i class="fas fa-phone"></i> Call Us
           </a>
           <a href="https://wa.me/9779822783298" class="btn btn-success" target="_blank">
@@ -349,7 +470,7 @@
   <!-- Footer -->
   <footer class="footer text-center">
   <div class="social-links">
-    <a href="https://www.facebook.com/profile.php?id=61557556892778"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61555121012138"><i class="fab fa-facebook"></i></a>
     <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
     <a href="https://www.instagram.com/dewarshifarm/?fbclid=IwAR2Ai_4OLk_ChtS3fvYbDK4npUsUIgDQ73O5_9-bTL1tC8xEUzkgfg7bFqQ"><i class="fab fa-instagram"></i></a>
   </div>
